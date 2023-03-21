@@ -1,4 +1,4 @@
-- ** `feat` **: Adiciona uma nova funcionalidade ao código.
+# `feat` **: Adiciona uma nova funcionalidade ao código.
 - **`fix`**: Corrige um problema no código.
 - **`docs`**: Altera a documentação do código.
 - **`refactor`**: Faz alterações no código que não adicionam nova funcionalidade ou corrigem um problema, mas melhoram a qualidade, legibilidade ou estrutura do código.

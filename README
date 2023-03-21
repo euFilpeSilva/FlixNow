@@ -1,1 +1,8 @@
-
+- **`feat`**: Adiciona uma nova funcionalidade ao código.
+- **`fix`**: Corrige um problema no código.
+- **`docs`**: Altera a documentação do código.
+- **`refactor`**: Faz alterações no código que não adicionam nova funcionalidade ou corrigem um problema, mas melhoram a qualidade, legibilidade ou estrutura do código.
+- **`test`**: Adiciona ou altera testes do código.
+- **`chore`**: Faz alterações no projeto que não estão relacionadas ao código em si, como atualizar dependências, alterar configurações, etc.
+- **`style`**: Faz alterações no estilo do código, como indentação, formatação, etc.
+- **`perf`**: Faz alterações no código que melhoram a performance.

@@ -5,12 +5,12 @@
 #imagem-c img {
   width: 100%;
   height: 100%;
-  opacity: 0.1; /* Define a transparência da imagem */
+  opacity: 0.3; /* Define a transparência da imagem */
   transition: opacity 0.5s ease-in-out; /* Define a transição */
 }
 #imagem-c  {
   width: 100%;
-  height: 2%;
+  height: 300vh;
 }
 
 .carousel-container {
@@ -18,6 +18,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   z-index: -1;
 }

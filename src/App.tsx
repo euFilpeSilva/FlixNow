@@ -30,14 +30,12 @@ export default function App() {
   const [page, setPage] = useState<number>(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(6);
 
-  const handlePageChange = (newPage: number) => {
+const handlePageChange = (event: any, newPage: number) => {
   setPage(newPage);
 }
 
 
-
-  const baseURL =
-    "https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page+=page";
+    const baseURL = `https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page=${page}`;
 
   useEffect(() => {
     axios.get<PopularFilms>(baseURL).then((response) => {
@@ -63,66 +61,10 @@ return (
     </div>
     <Home filmes={currentPageItems} />
     <Pagination 
-      page={page} 
-      count={Math.ceil(filmes.length / itemsPerPage)} 
-      onChange={(value: any) => handlePageChange(value)}
-    />
+  page={page} 
+  count={Math.ceil(filmes.length / itemsPerPage)} 
+  onChange={handlePageChange}
+/>
   </div>
 );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function App() {
-//   const [filmes, setFilmes] = useState<Film[]>([]);
-
-//   const baseURL = "https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page+=page"
-
-//   useEffect(() => {
-//     axios.get<PopularFilms>(baseURL)
-//       .then((response) => {
-//         setFilmes(response.data.results)
-//       });
-//   }, []);
-
-//  return (
-//   <div id="principal">
-//    <Navbar/>
-//    {/* <Carroussel filmes={filmes}/> */}
-
-//     <Carousel>
-//         {filmes.map((filme: Film, index: number) => (
-//           <div key={index} id="imagem-c">
-//             <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
-//             {/* <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
-//             <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} /> */}
-//           </div>
-//         ))}
-//     </Carousel>
-//     <Home filmes={filmes} />
-//   </div>
-//  );
-// }
-

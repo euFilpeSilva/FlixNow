@@ -1,0 +1,20 @@
+#textosNav {
+    display: flex;
+    width: 100%;
+}
+
+#lista {
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
+#logo {
+    color:red;
+    font-size: 30px;
+    font-weight: bold;
+    width: 10vw;
+}

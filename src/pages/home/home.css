@@ -1,0 +1,32 @@
+#listaFilmesPopulares {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: auto;
+  width:80%
+}
+
+#listaFilmesPopulares > div {
+  width: 18%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease-out;
+}
+
+#listaFilmesPopulares > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* #card-pai {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
+    width:80%
+} */
+
+
+
+
+

@@ -10,3 +10,6 @@
 - **`perf`**: Faz alterações no código que melhoram a performance.
 
 É importante notar que esses são apenas exemplos e que a lista de commits semânticos pode ser adaptada para atender às necessidades específicas de cada projeto. O importante é que os commits sejam descritivos e claros para facilitar a compreensão do histórico de alterações do código.
+
+
+### Wireframe: https://www.figma.com/file/0BoLbFzDjksCERioc1s8tH/FlixNow?node-id=0%3A1&t=7H65oJNbnhn68Y0i-1

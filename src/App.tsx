@@ -42,9 +42,6 @@ return (
     <Navbar />
     <div className="carousel-container">
 
-    {/* <Carousel >
-
-      {/* <Outlet/> */}
     <Carousel >
 
       {currentPageItems.map((filme: Film, index: number) => (
@@ -52,7 +49,9 @@ return (
           <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
         </div>
       ))}
+
     </Carousel>
+
     </div>
     <Home filmes={currentPageItems} />
     

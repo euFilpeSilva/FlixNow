@@ -1,7 +1,7 @@
 import React from "react";
 import "./Perfil.css";
 import Navbar from "../../components/navbar/Navbar";
-// import { FaEdit } from "react-icons/fa";
+// import { FaEdit } from "react-icons/fa"a;
 
 const Perfil = () => {
   return (

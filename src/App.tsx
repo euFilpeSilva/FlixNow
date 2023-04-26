@@ -63,7 +63,7 @@ return (
           <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
         </div>
       ))}
-    </Carousel> */}
+    </Carousel> 
     </div>
     <Home filmes={currentPageItems} />
     

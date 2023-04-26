@@ -1,27 +1,22 @@
-import { Film } from "../../App";
+import { Film } from "../../models/Film";
 import "./movieCard.css";
 
-type FilmesCardProps = {
-  // movie: Movie;
-  filmes: Film[];
-};
+// type FilmesCardProps = {
+//   filmes: Film[];
+// };
 
-function MovieCard({ filmes }: FilmesCardProps): JSX.Element {
+function MovieCard(props: any): JSX.Element {
+
+const {filmes} = props;
 
   return (
     <>
-       {filmes.map((filme: Film, index: number) => (
-
-        <div className="movie-card" key={index}>
-          <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
-        </div>
-      ))} 
-
+    <div className="movie-card">
+       {<img src={`https://image.tmdb.org/t/p/w500${filmes.poster_path}`} alt={filmes.poster_path} />}
+    </div>
     </>    
-  );
+  )
+
 }
 
 export default MovieCard;
-
-            {/* <h2>{filme.title}</h2> */}
-            {/* <p>{filme.vote_average}</p>   */}

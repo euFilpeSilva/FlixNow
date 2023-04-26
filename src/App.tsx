@@ -8,17 +8,6 @@ import Pagination from "@mui/material/Pagination";
 
 import { Film } from "./models/Film";
 
-// import {Outlet} from "react-router-dom";
-
-
-// export type Film = {
-//   id: number,
-//   title: string,
-//   poster_path: string,
-//   vote_average: number,
-//   genre_ids: number[],
-// }
-
 export type PopularFilms = {
   page: number,
   results: Film[],
@@ -63,7 +52,7 @@ return (
           <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
         </div>
       ))}
-    </Carousel> */}
+    </Carousel>
     </div>
     <Home filmes={currentPageItems} />
     

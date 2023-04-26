@@ -5,7 +5,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Carousel from "react-material-ui-carousel";
 import Pagination from "@mui/material/Pagination";
+
 import { Film } from "./models/Film";
+
+// import {Outlet} from "react-router-dom";
+
 
 // export type Film = {
 //   id: number,
@@ -48,7 +52,12 @@ return (
   <div id="principal">
     <Navbar />
     <div className="carousel-container">
+
     {/* <Carousel >
+
+      {/* <Outlet/> */}
+    <Carousel >
+
       {currentPageItems.map((filme: Film, index: number) => (
         <div key={index} id="imagem-c">
           <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />

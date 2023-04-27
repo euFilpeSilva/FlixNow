@@ -156,7 +156,7 @@ export default function Navbar(): JSX.Element {
   );
 
   return (
-    <Box>
+    <Box className="navbar">
       <AppBar position="static" sx={{ backgroundColor: '#18191D',  }}>
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>

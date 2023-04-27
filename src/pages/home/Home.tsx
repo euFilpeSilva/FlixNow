@@ -6,14 +6,13 @@ export function Home(props: any): JSX.Element {
 
   return (
     <>
-     <div id="card-pai">
+    <p className='popular' ><strong>Filmes Populares</strong></p>
         <div id="listaFilmesPopulares">
             {props.filmes.map((filme: Film, index: number) => (      
       
                 <MovieCard key={index} filmes={filme} />         
               ))}
         </div>
-     </div>
     </>
   );
 }

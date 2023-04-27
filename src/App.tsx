@@ -7,6 +7,8 @@ import Carousel from "react-material-ui-carousel";
 import Pagination from "@mui/material/Pagination";
 
 import { Film } from "./models/Film";
+import Slider from "react-slick";
+import CarouselHome from "./pages/home/CarouselHome";
 
 export type PopularFilms = {
   page: number,
@@ -36,24 +38,23 @@ const handlePageChange = (event: any, newPage: number) => {
     });
   }, []);
 
-
 return (
   <div id="principal">
-    <Navbar />
+        <Navbar  />
+    <div className="carousel-home">
+     <CarouselHome currentPageItems={currentPageItems} />
+    </div>
     <div className="carousel-container">
-
     <Carousel >
-
-      {currentPageItems.map((filme: Film, index: number) => (
-        <div key={index} id="imagem-c">
-          <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
-        </div>
-      ))}
-
+        {currentPageItems.map((filme: Film, index: number) => (
+          <div key={index} id="imagem-c">
+            <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title} />
+          </div>
+        ))}
     </Carousel>
 
     </div>
-    <Home filmes={currentPageItems} />
+    <Home className="home" filmes={currentPageItems} />
     
     <Pagination 
   page={page}

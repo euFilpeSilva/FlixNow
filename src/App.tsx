@@ -56,11 +56,18 @@ return (
     </div>
     <Home className="home" filmes={currentPageItems} />
     
-    <Pagination 
-  page={page}
-  count={Math.ceil(filmes.length / itemsPerPage)} 
-  onChange={handlePageChange}
-/>
+   <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <Pagination
+    page={page}
+    count={Math.ceil(filmes.length / itemsPerPage)} 
+    onChange={handlePageChange}
+    sx={{ '& .MuiPaginationItem-page.Mui-selected': { color: 'red' },
+     '& .MuiPaginationItem-icon': { color: 'red' },
+     '& .MuiPaginationItem-root': { fontSize: '20px', color: 'white', marginTop: '20px'  }
+    }}
+  />
+</div>
+
   </div>
 );
 }

@@ -2,15 +2,10 @@
   margin-bottom: -1px;
 }
 
-.secundary {
-    margin-top: 100px;
-
-}
-
 .imagem {
-    display: flex;
-    border-radius: 20px;
-    height: 50vh;
+  display: flex;
+  border-radius: 20px;
+  height: 50vh;
 }
 
 .destaques {
@@ -20,4 +15,12 @@
   font-size: 2.0em;
   color: white;
   font-weight: bold;
+}
+
+.carousel-home {
+  margin-top: 110px;
+  position: relative;
+  width: 98.2vw;
+  overflow: hidden;
+  margin-left: 0.8vw;
 }

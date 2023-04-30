@@ -1,71 +1,133 @@
-import React from "react";
 import "./Perfil.css";
-import Navbar from "../../components/navbar/Navbar";
-// import { FaEdit } from "react-icons/fa"a;
+import { useState } from "react";
+import "./Perfil.css";
+import FundoHome from "../../components/fundoHome/FundoHome";
 
-const Perfil = () => {
+export default function Perfil() {
+  const [isEditing, setIsEditing] = useState(false);
+  const [firstName, setFirstName] = useState('John');
+  const [lastName, setLastName] = useState('Doe');
+  const [email, setEmail] = useState('johndoe@example.com');
+  const [password, setPassword] = useState('********');
+  const [profileType, setProfileType] = useState('user');
+  const [profileImage, setProfileImage] = useState('https://via.placeholder.com/150');
+
+  const handleEditProfile = () => {
+    setIsEditing(true);
+  };
+
+  const handleSaveProfile = () => {
+    setIsEditing(false);
+  };
+
+  const handleCancelEditProfile = () => {
+    setIsEditing(false);
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    switch (name) {
+      case 'firstName':
+        setFirstName(value);
+        break;
+      case 'lastName':
+        setLastName(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
+      case 'profileType':
+        setProfileType(value);
+        break;
+      case 'profileImage':
+        setProfileImage(value);
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
-    <div className="perfil-container">
-      <Navbar />
-      <div className="perfil-header">
-        <div className="perfil-imagem-container">
-          <img
-            src="https://palestraparaprofessores.com.br/wp-content/webp-express/webp-images/uploads/2022/12/fotos-para-perfil-elefante-andando-de-bike.png.webp"
-            alt="Imagem de perfil"
-            className="perfil-imagem"
+    <>
+      <FundoHome />
+    <div className="profile">
+      <div className="profile-header">
+        <img src={profileImage} alt="Profile" />
+        <h1>
+          {firstName} {lastName}
+        </h1>
+      </div>
+      {isEditing ? (
+        <div className="profile-form">
+          <input
+            placeholder="Nome"
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={handleInputChange}
           />
-          <button className="perfil-editar">
-            {/* <FaEdit /> */}
-          </button>
-        </div>
-        <h1 className="perfil-nome">Raimundo Jalin de Santos Rabei</h1>
-        <p className="perfil-descricao">Descrição do Usuário</p>
-      </div>
-
-      <div className="perfil-secoes-container">
-        <div className="perfil-secao">
-          <h2 className="perfil-titulo-secao">Informações Pessoais</h2>
-          <div className="perfil-informacoes">
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">Data de Nascimento:</h3>
-              <p className="perfil-dado">DD/MM/AAAA</p>
-            </div>
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">Forma de Pagamento:</h3>
-              <p className="perfil-dado">Cartão Débito</p>
-            </div>
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">Meu Plano:</h3>
-              <p className="perfil-dado">Plano Família</p>
-            </div>
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">E-mail:</h3>
-              <p className="perfil-dado">tiramos10@iesb.edu.br</p>
-            </div>
-            
+          <input
+            placeholder="Segundo nome"
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={handleInputChange}
+            />
+          <input
+            placeholder="E-mail"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleInputChange}
+          />
+          <input
+            placeholder="Senha"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+          />
+          <select
+            placeholder="Tipo perfil"
+            name="profileType"
+            value={profileType}
+            onChange={handleInputChange}
+          >
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <input placeholder="Image URL"
+            type="text"
+            name="profileImage"
+            value={profileImage}
+            onChange={handleInputChange}
+            />
+          <div className="profile-form-buttons">
+            <button onClick={handleSaveProfile}>Save</button>
+            <button onClick={handleCancelEditProfile}>Cancel</button>
           </div>
         </div>
-
-        <div className="perfil-secao">
-          <h2 className="perfil-titulo-secao">Interesses</h2>
-          <div className="perfil-informacoes">
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">Hobbies:</h3>
-              <p className="perfil-dado">Música, Viagens</p>
-            </div>
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">Filmes Favoritos:</h3>
-              <p className="perfil-dado">O Poderoso Chefão, Star Wars</p>
-            </div>
-            <div className="perfil-item">
-              <h3 className="perfil-titulo">Tipo de Perfil:</h3>
-              <p className="perfil-dado">Entusiasta</p>
-            </div>
-          </div>
+      ) : (
+        <div className="profile-details">
+          <p>
+            <strong>Name:</strong> {firstName} {lastName}
+          </p>
+          <p>
+            <strong>E-mail:</strong> {email}
+          </p>
+          <p>
+            <strong>Password:</strong> {password}
+          </p>
+          <p>
+            <strong>Type profile:</strong> {profileType}
+          </p>
+          <button onClick={handleEditProfile}>Edit profile</button>
         </div>
-      </div>
+      )}
     </div>
+      </>
   );
-};
-
-export default Perfil;
+}

@@ -1,9 +1,4 @@
-import { Film } from "../../models/Film";
 import "./movieCard.css";
-
-// type FilmesCardProps = {
-//   filmes: Film[];
-// };
 
 function MovieCard(props: any): JSX.Element {
 

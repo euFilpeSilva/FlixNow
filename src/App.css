@@ -1,12 +1,4 @@
-/* #principal {
-  display: flex;
-} */
 
-#imagem-c img {
-  width: 100%;
-  opacity: 0.3; /* Define a transparência da imagem */
-  transition: opacity 0.5s ease-in-out; /* Define a transição */
-}
 
 .carousel-container {
   position: absolute;
@@ -17,12 +9,6 @@
   z-index: -1;
 }
 
-.carousel-home {
-  position: relative;
-  width: 98.5vw;
-  overflow: hidden;
-  margin-left: 0.3vw;
-}
 
 .home {
   width: 100%;

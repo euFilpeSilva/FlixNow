@@ -3,7 +3,7 @@
     height: 0vh;
     margin-top: 0;
     pargin-bottom: 0;
-    background-color: red;
+    object-fit: cover;
     opacity: 0.1; //Define a transparência da imagem
     transition: opacity 0.5s ease-in-out; /* Define a transição */
 }

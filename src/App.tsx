@@ -17,24 +17,25 @@ export default function App() {
   const [onPerfil, setOnPerfil] = useState<boolean>(false);
 
 
-  function estadoPerfil(event) {
+  function estadoPerfil(event: any) {
     setOnPerfil(true);
   };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout estadoPerfil={estadoPerfil} />}>
+        <Route
+          path="/"
+          element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
+        >
+          <Route path="inicio" element={<Home />} />
           {!onPerfil ? (
-            <Route path="/">
-              <Route path="home" element={<Home />} />
-              <Route path="/" element={<Navigate to="/home" replace />} />
-            </Route>
+            <>
+              <Route path="/" element={<Navigate to="inicio" replace />} />
+            </>
           ) : (
-            <Route path="perfil">
-              <Route index element={<Perfil />} />
-            </Route>
-          )}
+              <Route path="perfil" element={<Perfil />} />
+            )}
         </Route>
       </Routes>
     </BrowserRouter>

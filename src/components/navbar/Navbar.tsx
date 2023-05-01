@@ -83,9 +83,15 @@ export default function Navbar(props: any): JSX.Element {
 
     const navigate = useNavigate();
 
-function navegarParaPerfil(event) {
+function navegarParaPerfil(event: any) {
     props.estadoPerfil(event);
     navigate("/perfil");
+  }
+
+function navegarInicio(event: any) {
+    // props.estadoPerfil(event);
+    props.estadoPerfil(false);
+    navigate("/inicio");
   }
 
   const menuId = 'primary-search-account-menu';
@@ -166,18 +172,32 @@ function navegarParaPerfil(event) {
 
   return (
     <Box className="navbar">
-      <AppBar position="static" sx={{ backgroundColor: '#18191D',  }}>
+      <AppBar position="static" sx={{ backgroundColor: "#18191D" }}>
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
-            <div id='textosNav'>
-                <p id="logo" ><strong>FLIX-NOW</strong></p>
-                  <ul id="lista">
-                    <li>Inicio</li>
-                    <li>Séries</li>
-                    <li>Filmes</li>
-                    <li>Bombando</li>
-                    <li>Minha lista</li>
-                  </ul>
+            <div id="textosNav">
+              <p id="logo">
+                <strong>FLIX-NOW</strong>
+              </p>
+              <ul id="lista">
+                <li>
+                          <nav>
+                          <Link to="/inicio">Inicio2</Link>
+                          </nav>    
+                </li>
+                <li>
+                  <Link to="/series">Séries</Link>
+                </li>
+                <li>
+                  <Link to="/filmes">Filmes</Link>
+                </li>
+                <li>
+                  <Link to="/bombando">Bombando</Link>
+                </li>
+                <li>
+                  <Link to="/minha-lista">Minha lista</Link>
+                </li>
+              </ul>
             </div>
           </Box>
           <Box>
@@ -204,11 +224,11 @@ function navegarParaPerfil(event) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle sx={{ fontSize: '2.5rem' }}/>
+              <AccountCircle sx={{ fontSize: "2.5rem" }} />
             </IconButton>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }} >
-            <IconButton  
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"

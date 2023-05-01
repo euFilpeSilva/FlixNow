@@ -22,22 +22,25 @@ export default function App() {
   };
 
   return (
+    <div className="central">
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
-        >
+        >      
           <Route path="inicio" element={<Home />} />
+
           {!onPerfil ? (
             <>
               <Route path="/" element={<Navigate to="inicio" replace />} />
             </>
           ) : (
-              <Route path="perfil" element={<Perfil />} />
+            <Route path="perfil" element={<Perfil />} />
             )}
         </Route>
       </Routes>
     </BrowserRouter>
+</div>
   );
 }

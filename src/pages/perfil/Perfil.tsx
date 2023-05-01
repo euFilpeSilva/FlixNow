@@ -24,7 +24,7 @@ export default function Perfil() {
     setIsEditing(false);
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: any) => {
     const { name, value } = event.target;
 
     switch (name) {
@@ -90,7 +90,7 @@ export default function Perfil() {
             value={password}
             onChange={handleInputChange}
           />
-          <select
+          <select title="Tipo perfil"
             placeholder="Tipo perfil"
             name="profileType"
             value={profileType}

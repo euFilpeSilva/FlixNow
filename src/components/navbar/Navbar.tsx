@@ -13,7 +13,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import './navbar.css';
+import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
@@ -181,9 +181,9 @@ function navegarInicio(event: any) {
               </p>
               <ul id="lista">
                 <li>
-                          <nav>
-                          <Link to="/inicio">Inicio2</Link>
-                          </nav>    
+                    <nav>
+                        <Link to="/inicio">Inicio</Link>
+                    </nav>    
                 </li>
                 <li>
                   <Link to="/series">Séries</Link>

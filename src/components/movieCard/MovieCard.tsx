@@ -1,4 +1,4 @@
-import "./movieCard.css";
+import "./MovieCard.css";
 
 function MovieCard(props: any): JSX.Element {
 

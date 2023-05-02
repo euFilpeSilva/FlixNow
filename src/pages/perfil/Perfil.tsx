@@ -56,7 +56,7 @@ export default function Perfil() {
     <>
     <Navbar />
       <FundoHome />
-    <div className="profile">
+    <div style={{"height": "90vh"}} className="profile">
       <div className="profile-header">
         <img src={profileImage} alt="Profile" />
         <h1>

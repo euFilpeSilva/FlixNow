@@ -5,8 +5,9 @@ import { Film } from "./models/Film";
 import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Perfil from "./pages/perfil/Perfil";
 import Layout from "./components/Layout";
-import DetalhesFime from "./components/movieCard/DetalhesFilme";
 import DetalhesFilme from "./components/movieCard/DetalhesFilme";
+import Login from "./pages/login/Login";
+import RecuperarSenha from "./pages/login/ReuerarSenha";
 
 export type PopularFilms = {
   page: number;
@@ -27,15 +28,26 @@ export default function App() {
     <div className="central">
     <BrowserRouter>
       <Routes>
+     
+        
         <Route
           path="/"
-          element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
+          
         >      
-          <Route path="inicio" element={<Home />} />
+         
+          <>
+            <Route
+             element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
+             >
+              <Route path="inicio" element={<Home />} />
+            </Route>
+          </>
+          <Route path="login" element={<Login />} />
+          <Route path="recuperar" element={<RecuperarSenha />} />
 
           {!onPerfil ? (
             <>
-              <Route path="/" element={<Navigate to="inicio" replace />} />
+              <Route path="/" element={<Navigate to="login" replace />} />
             </>
           ) : (
             <Route path="perfil" element={<Perfil />} />

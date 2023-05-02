@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Film } from '../../models/Film';
-import './carouselHome.css';
+import './CarouselHome.css';
 import { PopularFilms } from '../../App';
 import axios from 'axios';
 import FundoHome from '../../components/fundoHome/FundoHome';

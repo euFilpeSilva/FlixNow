@@ -88,11 +88,10 @@ function navegarParaPerfil(event: any) {
     navigate("/perfil");
   }
 
-function navegarInicio(event: any) {
-    // props.estadoPerfil(event);
-    props.estadoPerfil(false);
-    navigate("/inicio");
-  }
+   function handleClick(event: any) {
+     props.onLogout(event);
+     navigate("/login");
+   }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -114,7 +113,7 @@ function navegarInicio(event: any) {
       <MenuItem onClick={navegarParaPerfil}>
         <>Profile</>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleClick}>Sair</MenuItem>
     </Menu>
   );
 

@@ -18,11 +18,15 @@ export type PopularFilms = {
 
 export default function App() {
   const [onPerfil, setOnPerfil] = useState<boolean>(false);
+    const [logado, setLogado] = useState(false);
 
 
   function estadoPerfil(event: any) {
     setOnPerfil(true);
   };
+    function handleLogout(event: any) {
+      setLogado(false);
+    }
 
   return (
     <div className="central">
@@ -37,7 +41,7 @@ export default function App() {
          
           <>
             <Route
-             element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
+             element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} onLogout={handleLogout}/>}
              >
               <Route path="inicio" element={<Home />} />
             </Route>

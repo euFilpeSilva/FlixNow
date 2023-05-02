@@ -41,7 +41,7 @@ export function Home(props: any): JSX.Element {
       </p>
       <div id="listaFilmesPopulares">
         {currentPageItems.map((filme: Film, index: number) => (
-          <MovieCard key={index} filmes={filme} />
+            <MovieCard key={index} filmes={filme} />
         ))}
         <div className='movie-card' style={{ display: "flex", justifyContent: "center" }}>
           <Pagination

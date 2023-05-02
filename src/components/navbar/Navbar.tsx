@@ -185,9 +185,9 @@ function navegarInicio(event: any) {
                         <Link to="/inicio">Inicio</Link>
                     </nav>    
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/series">Séries</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/filmes">Filmes</Link>
                 </li>

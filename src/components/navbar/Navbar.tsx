@@ -187,7 +187,7 @@ function navegarInicio(event: any) {
                 </li>
                 {/* <li>
                   <Link to="/series">Séries</Link>
-                </li> */}
+                </li>
                 <li>
                   <Link to="/filmes">Filmes</Link>
                 </li>
@@ -196,6 +196,18 @@ function navegarInicio(event: any) {
                 </li>
                 <li>
                   <Link to="/minha-lista">Minha lista</Link>
+                </li> */}
+                <li>
+                  <div>Séries</div>
+                </li>
+                <li>
+                  <div >Filmes</div>
+                </li>
+                <li>
+                  <div>Bombando</div>
+                </li>
+                <li>
+                  <div>Minha lista</div>
                 </li>
               </ul>
             </div>

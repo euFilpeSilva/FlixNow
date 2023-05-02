@@ -10,24 +10,29 @@ import CarouselHome from './CarouselHome';
 import FundoHome from '../../components/fundoHome/FundoHome';
 import Footer from '../../components/footer/Footer';
 
-export function Home(props: any): JSX.Element {
+// interface HomeProps {
+//   filmess: Film[];
+
+// }
+
+export function Home(): JSX.Element {
    const [page, setPage] = useState<number>(1);
-     const [filmes, setFilmes] = useState<Film[]>([]);
+  const [filmes, setFilmes] = useState<Film[]>([]);
    const [itemsPerPage, setItemsPerPage] = useState<number>(10);
    const baseURL = `https://api.themoviedb.org/3/movie/popular?api_key=c53174418b2a81eacf8a7966fa850c98&language=pt-BR&page=${page}`;
-
 
    useEffect(() => {
      axios.get<PopularFilms>(baseURL).then((response) => {
        setFilmes(response.data.results);
-       console.log(response.data.results);
+      //  console.log(response.data.results);
      });
    }, []);
+
 
    const handlePageChange = (event: any, newPage: number) => {
      setPage(newPage);
     };
-    
+
     const start = (page - 1) * itemsPerPage;
     const end = Math.min(start + itemsPerPage, filmes.length);
     const currentPageItems = filmes.slice(start, end);
@@ -60,7 +65,6 @@ export function Home(props: any): JSX.Element {
           />
         </div>
       </div>
-
       <Footer />
     </>
   );

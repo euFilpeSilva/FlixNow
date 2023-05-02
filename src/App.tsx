@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-route
 import Perfil from "./pages/perfil/Perfil";
 import Layout from "./components/Layout";
 import DetalhesFilme from "./components/movieCard/DetalhesFilme";
+import Login from "./pages/login/Login";
+import RecuperarSenha from "./pages/login/ReuerarSenha";
 
 export type PopularFilms = {
   page: number;
@@ -17,37 +19,43 @@ export type PopularFilms = {
 export default function App() {
   const [onPerfil, setOnPerfil] = useState<boolean>(false);
 
+
   function estadoPerfil(event: any) {
     setOnPerfil(true);
   };
 
   return (
     <div className="central">
-      <BrowserRouter>
-        <Routes>
+    <BrowserRouter>
+      <Routes>
+     
+        
+        <Route
+          path="/"
+          
+        >      
+         
           <>
-          <Route
-            path="/"
-            element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
-          >
-            <Route path="inicio" element={<Home />} />
+            <Route
+             element={<Layout estadoPerfil={estadoPerfil} onPerfil={onPerfil} />}
+             >
+              <Route path="inicio" element={<Home />} />
+            </Route>
+          </>
+          <Route path="login" element={<Login />} />
+          <Route path="recuperar" element={<RecuperarSenha />} />
 
-            {!onPerfil ? (
-              <>
-                <Route path="/" element={<Navigate to="inicio" replace />} />
-              </>
-            ) : (
-              <Route path="perfil" element={<Perfil />} />
-              )}
-          </Route>
-                </>
-              <Route
-                path="detalhes/:id"
-                element={<DetalhesFilme />}
-                />
-        </Routes>
-      </BrowserRouter>
-    </div>
+          {!onPerfil ? (
+            <>
+              <Route path="/" element={<Navigate to="login" replace />} />
+            </>
+          ) : (
+            <Route path="perfil" element={<Perfil />} />
+            )}
+        <Route path="detalhes/:id" element={ <DetalhesFilme/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+</div>
   );
 }
-

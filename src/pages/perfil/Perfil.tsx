@@ -2,6 +2,7 @@ import "./Perfil.css";
 import { useState } from "react";
 import "./Perfil.css";
 import FundoHome from "../../components/fundoHome/FundoHome";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Perfil() {
   const [isEditing, setIsEditing] = useState(false);
@@ -53,6 +54,7 @@ export default function Perfil() {
 
   return (
     <>
+    <Navbar />
       <FundoHome />
     <div className="profile">
       <div className="profile-header">

@@ -3,7 +3,7 @@ import "./Login.css";
 import FundoHome from "../../components/fundoHome/FundoHome";
 import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 
-export default function Login() {
+export default function RecuperarSenha() {
   const [isEditing, setIsLogin] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,12 +16,12 @@ export default function Login() {
 
   const handleLoginTrue = () => {
     setIsLogin(true);
-    navigate(`/inicio`);
+    navigate(`/login`);
   };
 
-  const handleRecuperarSenha = () => {
+  const handleCancelLogin = () => {
     setIsLogin(false);
-    navigate(`/recuperar`);
+    navigate(`/login`);
   };
 
   const handleInputChange = (event: any) => {
@@ -32,9 +32,7 @@ export default function Login() {
       case 'email':
         setEmail(value);
         break;
-      case 'password':
-        setPassword(value);
-        break;
+      
       default:
         break;
     }
@@ -43,10 +41,9 @@ export default function Login() {
   return (
     <>
       <FundoHome />
-     
     <div className="profile">
     <h1>
-        Login
+        Recuperar Senha
       </h1>
       {!isEditing ? (
         <div className="profile-form">
@@ -57,16 +54,11 @@ export default function Login() {
             value={email}
             onChange={handleInputChange}
           />
-          <input
-            placeholder="Senha"
-            name="password"
-            value={password}
-            onChange={handleInputChange}
-          />
+         
          
           <div className="profile-form-buttons">
-            <button onClick={handleLoginTrue}>Login</button>
-            <button onClick={handleRecuperarSenha}>Recuperar Senha</button>
+            <button onClick={handleLoginTrue}>Cancelar</button>
+            <button onClick={handleCancelLogin}>Recuperar Senha</button>
           </div>
         </div>
       ) : (
@@ -75,9 +67,7 @@ export default function Login() {
           <p>
             <strong>E-mail:</strong> {email}
           </p>
-          <p>
-            <strong>Password:</strong> {password}
-          </p>
+          
           
         </div>
       )}

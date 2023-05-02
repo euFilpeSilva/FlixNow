@@ -9,6 +9,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: 10vw;
+  height: 27.5vh;
 }
 
 .row {

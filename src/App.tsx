@@ -5,6 +5,8 @@ import { Film } from "./models/Film";
 import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Perfil from "./pages/perfil/Perfil";
 import Layout from "./components/Layout";
+import DetalhesFime from "./components/movieCard/DetalhesFilme";
+import DetalhesFilme from "./components/movieCard/DetalhesFilme";
 
 export type PopularFilms = {
   page: number;
@@ -38,6 +40,7 @@ export default function App() {
           ) : (
             <Route path="perfil" element={<Perfil />} />
             )}
+        <Route path="detalhes/:id" element={ <DetalhesFilme/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -21,6 +21,8 @@ Para rodar o projeto em sua máquina, siga os passos abaixo:
 
 5 - Acesse o projeto em seu navegador através do endereço http://localhost:3000.
 
+### Backlog pra refinamento:
+
 ![image](https://github.com/euFilpeSilva/FlixNow/assets/79103757/29f0688c-2088-4e67-a68c-3d5e6b6de21d)
 
 
